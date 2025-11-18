@@ -41,7 +41,7 @@ struct Node {
 
 struct Node *top = NULL;
 
-// PUSH operation
+
 void push() {
     int value;
     printf("Enter value to push: ");
@@ -55,7 +55,7 @@ void push() {
     printf("Element pushed.\n");
 }
 
-// POP operation
+
 void pop() {
     if (top == NULL) {
         printf("Stack Underflow.\n");
@@ -69,7 +69,7 @@ void pop() {
     printf("Element popped.\n");
 }
 
-// DISPLAY operation
+
 void display() {
     if (top == NULL) {
         printf("Stack is empty.\n");
