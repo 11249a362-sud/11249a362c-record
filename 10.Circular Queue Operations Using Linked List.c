@@ -46,7 +46,7 @@ struct Node {
 
 struct Node *front = NULL, *rear = NULL;
 
-// ENQUEUE operation
+
 void enqueue() {
     int value;
     printf("Enter value to enqueue: ");
@@ -55,9 +55,9 @@ void enqueue() {
     struct Node *newNode = (struct Node*)malloc(sizeof(struct Node));
     newNode->data = value;
 
-    if (front == NULL) {     // Queue empty
+    if (front == NULL) {     
         front = rear = newNode;
-        rear->next = front;  // Circular link
+        rear->next = front; 
     } else {
         rear->next = newNode;
         rear = newNode;
@@ -67,7 +67,7 @@ void enqueue() {
     printf("Element enqueued.\n");
 }
 
-// DEQUEUE operation
+
 void dequeue() {
     if (front == NULL) {
         printf("Queue Underflow.\n");
@@ -76,18 +76,18 @@ void dequeue() {
 
     struct Node *temp = front;
 
-    if (front == rear) {  // Only one node
+    if (front == rear) {  
         front = rear = NULL;
     } else {
         front = front->next;
-        rear->next = front;  // Maintain circular link
+        rear->next = front;  
     }
 
     free(temp);
     printf("Element dequeued.\n");
 }
 
-// DISPLAY operation
+
 void display() {
     if (front == NULL) {
         printf("Queue is empty.\n");
