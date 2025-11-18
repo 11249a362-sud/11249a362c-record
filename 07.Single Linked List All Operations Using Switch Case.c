@@ -29,12 +29,12 @@ Program:
 struct Node
 {
     int data;
-    struct Node *next; // To hold the address of next node
+    struct Node *next; 
 };
 
 struct Node *CreateNode(int data)
 {
-    // STACK = (char *)malloc(MAX * sizeof(char));
+    
     struct Node *newNode = (struct Node *)malloc(sizeof(struct Node));
     if (!newNode)
     {
@@ -73,7 +73,7 @@ void InsertAtEnd(struct Node **head, int data)
  
 void InsertAtPosition(struct Node **head, int data, int position)
 {
-    // Considering that the position starts from 1 (Head at 1)
+   
     if (position < 1)
     {
         printf("Invalid position!\n");
@@ -123,11 +123,7 @@ void DeleteNode(struct Node **head, int valueToDelete)
         return;
     }
  
-    /* while (temp != NULL && temp->data != valueToDelete)
-    {
-        prev = temp;
-        temp = temp->next;
-    }*/
+ 
  
     struct Node *prev = *head;
     while (prev->next != NULL)
@@ -143,7 +139,7 @@ void DeleteNode(struct Node **head, int valueToDelete)
         prev = prev->next;
     }
  
-    // If key not found
+    
     if (prev->next == NULL)
     {
         printf("Element %d not found.\n", valueToDelete);
@@ -164,17 +160,14 @@ void DisplayList(struct Node *head)
     printf("\nLinked List Nodes: ");
     while (temp != NULL)
     {
-        // if(temp == head)
-        // {
-        //     printf("|head|%p| ->", temp);
-        // }
+        
         printf(" |At=%p|%d|Next=%p| -> ", temp, temp->data, temp->next);
         temp = temp->next;
     }
-   // printf("NULL\n");
+   
 }
  
-// Main function
+
 int main()
 {
     struct Node *head = NULL;
